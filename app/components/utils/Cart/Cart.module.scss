@@ -1,0 +1,186 @@
+.container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: var(--white);
+  height: calc(100vh - 6rem);
+  height: calc(100dvh - 6rem);
+  width: 30rem;
+  z-index: 99;
+  margin: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  -webkit-box-shadow: 1px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: var(--medium-font-size);
+  border-bottom: 1px solid rgba($color: #000, $alpha: 0.3);
+
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: var(--medium-font-size);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: scale 250ms ease-in-out;
+
+    &:hover {
+      scale: 1.3;
+    }
+  }
+}
+
+.cart {
+  flex: 1;
+  overflow: auto;
+
+  .cart__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+
+    height: 7rem;
+    margin: 0.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    // -webkit-box-shadow: 1px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    // -moz-box-shadow: 1px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    // box-shadow: 1px 0px 15px 0px rgba(0, 0, 0, 0.1);
+
+    .watch__image {
+      height: 100%;
+      aspect-ratio: 1;
+
+      .image__container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .image {
+          object-fit: contain;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .watch__details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+
+      & > span {
+        text-transform: uppercase;
+        font-size: var(--tiny-font-size);
+      }
+
+      p {
+        font-size: var(--medium-font-size);
+        // font-family: "Cinzel", serif;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .quantity {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .span {
+          font-size: var(--small-font-size);
+        }
+
+        .quantity__control {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          button {
+            width: 2rem;
+            font-size: var(--medium-font-size);
+            color: var(--black);
+            background-color: var(--white);
+            border: 1px solid var(--black);
+            border-radius: 4px;
+            cursor: pointer;
+          }
+        }
+      }
+      .amount {
+        font-size: var(--medium-font-size);
+        font-family: "Cinzel", serif;
+        font-weight: 500;
+        opacity: 0.7;
+      }
+    }
+
+    .delete {
+      padding: 1rem;
+      height: 100%;
+      // background-color: var(--black);
+      border-left: 1px solid rgba(0, 0, 0, 0.25);
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      color: var(--black);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 250ms ease-in-out;
+
+      &:hover {
+        background-color: var(--black);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.footer {
+  border-top: 1px solid rgba($color: #000, $alpha: 0.3);
+  height: 4rem;
+  padding: 0.5rem;
+  .cta {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    font-family: "Cinzel", serif;
+    cursor: pointer;
+
+    .dot {
+      width: 2px;
+      aspect-ratio: 1;
+      background-color: var(--white);
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (max-width: 515px) {
+  .container {
+    width: calc(100vw - 2rem);
+    max-height: calc(100dvh - 6rem);
+  }
+}
